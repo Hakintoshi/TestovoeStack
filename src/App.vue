@@ -1,14 +1,19 @@
 <template>
-  <div >
-    <h1>{{ tableData }}</h1>
+  <div class="app">
+    <DataTable :data="tableData"/>
   </div>
 </template>
 
 <script>
 import { tableData } from './tableData'
+import DataTable from './components/DataTable.vue';
 
 export default {
   name: 'App',
+
+  components: {
+    DataTable,
+  },
 
   data() {
     return {
@@ -19,4 +24,8 @@ export default {
 </script>
 
 <style>
+  .app {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+  }
 </style>
