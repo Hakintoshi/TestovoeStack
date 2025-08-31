@@ -6,7 +6,7 @@
       @input="$emit('input', $event.target.value)"
       :placeholder="placeholder"
       class="input"
-    >
+    />
   </div>
 </template>
 
@@ -21,10 +21,10 @@ export default {
 
     type: {
       type: String,
-      default: "text"
+      default: 'text',
     },
-  }
-}
+  },
+};
 </script>
 
 <style scoped>

@@ -1,9 +1,6 @@
 <template>
   <div class="app-top">
-    <AppInput 
-      @input="$emit('search', $event)" 
-      placeholder="Найти по ФИО..."
-    />
+    <AppInput @input="$emit('search', $event)" placeholder="Найти по ФИО..." />
     <AppButton class="app-top__btn" @click="$emit('open')">Добавить</AppButton>
   </div>
 </template>
@@ -21,16 +18,15 @@ export default {
   },
 
   data() {
-    return {
-    }
+    return {};
   },
-}
+};
 </script>
 
 <style>
-    .app-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+.app-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 </style>

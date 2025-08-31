@@ -1,21 +1,21 @@
 <template>
-    <div class="modal-overlay" @click.self="close">
-        <div class="modal">
-            <slot></slot>
-        </div>
+  <div class="modal-overlay" @click.self="close">
+    <div class="modal">
+      <slot></slot>
     </div>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'AppModal',
+  name: 'AppModal',
 
-    methods: {
-        close() {
-            this.$emit('close')
-        }
-    }
-}
+  methods: {
+    close() {
+      this.$emit('close');
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -34,6 +34,6 @@ export default {
   min-width: 300px;
   max-width: 500px;
   position: relative;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 </style>

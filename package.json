@@ -6,11 +6,21 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "prettier --write \"src/**/*.{js,vue}\"",
+    "lint": "eslint --ext .js,.vue src",
+    "lint:fix": "eslint --ext .js,.vue src --fix"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.28.0",
     "@vitejs/plugin-vue2": "^2.3.3",
-    "vite": "^5.0.0"
+    "eslint": "^9.34.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-vue": "^10.4.0",
+    "prettier": "^3.6.2",
+    "vite": "^5.0.0",
+    "vue-eslint-parser": "^10.2.0"
   },
   "dependencies": {
     "vue": "^2.7.16"

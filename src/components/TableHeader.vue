@@ -4,14 +4,15 @@
       v-for="(header, key) in headers"
       :key
       class="table-header"
-      :class="{'table-header_sortable': header.sortable}"
+      :class="{ 'table-header_sortable': header.sortable }"
       @click="header.sortable && clickOnHeader(key)"
     >
       <div class="table-header__wrapper">
         <span>{{ header.value }}</span>
-        <i 
-          v-show="header.sortable && fieldBySort === key && quantityRows > 1" 
-          class="material-icons">
+        <i
+          v-show="header.sortable && fieldBySort === key && quantityRows > 1"
+          class="material-icons"
+        >
           {{ directionArrow }}
         </i>
       </div>
@@ -20,13 +21,12 @@
 </template>
 
 <script>
-
 export default {
   name: 'TableHeader',
 
   props: {
     headers: {
-        type: Object,
+      type: Object,
     },
     fieldBySort: {
       type: String,
@@ -39,7 +39,7 @@ export default {
     quantityRows: {
       type: Number,
       default: 0,
-    }
+    },
   },
 
   computed: {
@@ -50,30 +50,30 @@ export default {
 
   methods: {
     clickOnHeader(key) {
-      if(this.quantityRows < 1) return;
+      if (this.quantityRows < 1) return;
 
-      this.$emit('sortByField', key, this.sortBy)
-    }
-  }
-}
+      this.$emit('sortByField', key, this.sortBy);
+    },
+  },
+};
 </script>
 
 <style>
-  .table-header {
-    text-align: center;
-    padding: 15px 10px;
-    font-size: 22px;
-    color: rgb(117, 117, 117);
-  }
+.table-header {
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 22px;
+  color: rgb(117, 117, 117);
+}
 
-  .table-header_sortable {
-    cursor: pointer;
-  }
+.table-header_sortable {
+  cursor: pointer;
+}
 
-  .table-header__wrapper {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     gap: 10px;
-  } 
+.table-header__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
 </style>
